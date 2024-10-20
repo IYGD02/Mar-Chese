@@ -1,4 +1,5 @@
-<!--
+
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!--
 Copyright (c) 2024 por Ecem Gokdogan ((link unavailable))
 
 Por la presente se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia de este software y los archivos de documentación asociados (el "Software"), para tratar con el Software sin restricción, incluidos, entre otros, los derechos de uso, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del Software, y para permitir que las personas a las que se proporciona el Software lo hagan, sujeto a las siguientes condiciones:
@@ -27,9 +28,10 @@ Nuestro objetivo es proporcionarle un ambiente relajado y sofisticado, perfecto 
       <title>Redirección con Botón</title>
   </head>
   <body>
-  
-      <button class="btn" onclick="redirigir()">Explorar más</button>
-  
+  <!-- From Uiverse.io by gharsh11032000 -->
+<button class="btn" onclick="redorigir()">
+  explorar mas
+</button>
       <script>
           function redirigir() {
               // Cambia la URL a la que deseas redirigir
@@ -84,6 +86,7 @@ Nuestro objetivo es proporcionarle un ambiente relajado y sofisticado, perfecto 
 }
 
 body {
+  height: 130vh;
   background-color: #0d0a0b;
   background: linear-gradient(145deg, #55566a 0%, #131318 76%);
 }
@@ -105,6 +108,7 @@ main {
 }
 
 .content h1 {
+  
   font-family: "Dancing Script", cursive;
   font-size: clamp(2.5rem, 4vw, 6rem);
   font-weight: 700;
@@ -123,33 +127,6 @@ main {
   padding-right: 100px;
 }
 
-.btn {
-  background-color: #c78c33d0;
-  background-image: linear-gradient(-180deg, #ffc16f, #c7842c);
-  font-size: clamp(0.8rem, 8vw, 0.9rem);
-  font-weight: 600;
-  color: #fff;
-  width: max-content;
-  outline: 0;
-  border: 0;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px;
-  margin-top: 26px;
-  text-align: center;
-  transform: scale(1);
-  transition: all 0.2s ease-in;
-  cursor: pointer;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  pointer-events: auto;
-}
-
-.btn:hover {
-  box-shadow: 0 4px 10px rgba(231, 183, 51, 0.993);
-  transform: scale(0.98);
-}
 
 /* Stacked Cards */
 
@@ -313,9 +290,7 @@ main {
     padding: 0 90px;
   }
 
-  .btn {
-    margin-bottom: 30px;
-  }
+  
 
   .stack {
     grid-area: stacked;
@@ -331,23 +306,54 @@ main {
     padding: 0 50px;
   }
 
-  .content h1 {
-    padding-left: 0;
-  }
+  
 
-  .btn {
-    padding: 8px 16px;
-  }
-
-  .card {
-    width: 180px;
-    height: 260px;
-  }
+  
+    /* From Uiverse.io by gharsh11032000 */ 
+.btn {
+  cursor: pointer;
+  position: relative;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: rgb(193, 163, 98);
+  border: 1px solid rgb(193, 163, 98);
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  overflow: hidden;
 }
 
-</style>
-<script>
-  const stack = document.querySelector(".stack");
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: rgb(193, 163, 98);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.btn:hover::before {
+  scale: 3;
+}
+
+.btn:hover {
+  color: #212121;
+  scale: 1.1;
+  box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+}
+
+.btn:active {
+  scale: 1;
+}
+
+
+</style><script>const stack = document.querySelector(".stack");
 const cards = Array.from(stack.children)
   .reverse()
   .filter((child) => child.classList.contains("card"));
@@ -378,6 +384,4 @@ stack.addEventListener("click", function (e) {
       stack.insertBefore(card, stack.firstElementChild);
     }, 1200);
   }
-});
-
-</script>
+});</script>
